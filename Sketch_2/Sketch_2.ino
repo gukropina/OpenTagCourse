@@ -200,22 +200,6 @@ pressed or not.
 
 /*
 Here is the complete code without my comments. Does it make sense?
-int led_pin = 11;
-int button_pin = 12;
-
-void setup() {
-pinMode(led_pin, OUTPUT);
-pinMode( button_pin, INPUT);
-}
-
-void loop() {
-int button_state = digitalRead( button_pin );
-if (button_state == HIGH) {
-digitalWrite(led_pin, HIGH);
-}
-else {
-digitalWrite(led_pin, LOW);
-}
 */
 
 // Hmh csy jmkyvi syx xli Giewev gmtliv?

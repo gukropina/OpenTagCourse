@@ -5,9 +5,15 @@
 /* a comment that spans multiple
 lines starts with /* and ends with */
 
-// You should always leave yourself comments that explain what you are doing
-// When you don't, you'll forget what the code does and have trouble
-// coming back to it later and changing stuff.
+/*
+ If you are writing a short note to yourself about what code does, use // to
+ write a single line comment. If the note is longer and will span multiple
+ lines, it is easier to use a multi-line comment */
+/*
+ You should always leave yourself comments that explain what you are doing
+ When you don't, you'll forget what the code does and have trouble
+ coming back to it later and changing stuff.
+*/
 
 /*
 When you know what you are doing, then you don't need to leave as detailed
@@ -15,10 +21,11 @@ comments, but until that point, good comments are key to good code
 */
 
 /*
-Speaking of good comments, notice how much easier this comment is to read
-than the last one because there is one space before I started writing.
-making your comments easy to read and understand is good and worth the time.
-Don't make your comments so long that people have to make the arduino window bigger just so that they can see them because this is annoying for people who don't want to expand their window just so they can read the comment that you put in your code but decided not to press enter any time soon because you just had to write it all on one line
+ Making your comments easy to read and understand is worth the time. It will 
+ make it easier for you to go back to old code and remember what it does.
+ We will be building off of code that you write in the beginning of the class
+ to build laser tag, so leave good comments now to make your life easier later.
+ Don't make your comments so long that people have to make the arduino window bigger just so that they can see them because this is annoying for people who don't want to expand their window just so they can read the comment that you put in your code but decided not to press enter any time soon because you just had to write it all on one line
 */
 
 /*
@@ -49,10 +56,15 @@ pin 11 on the arduino board, we may want to create a nickname (variable) for tha
 and call it led_pin, so that we can use the word led_pin in our code instead of
 the number 11. That line of code is shown below. It
 creates a variable (an int or integer, which will be described later)
-called led_pin and sets it equal to 13. the ; tells the arduino code that it is
-the end of the line of code.
+called led_pin and sets it equal to 11. the ; tells the arduino code that it is
+the end of the line of code. Every time you complete a command for the arduino,
+you should end the line of code with a ; and go to the next line. That will
+make your code easier to read.
 Note: nicknames (variables) can't have spaces. You can use underscores (_)
-though, to separate your words and make them easier to read
+though, to separate your words and make them easier to read, and we want to make
+this as easy as possible. Once we start writing code to play laser tag, we will
+have to keep track of what the arduino is doing, and using variable names that
+are hard to understand will make it harder than it needs to be.
 */
 int led_pin = 11;
 

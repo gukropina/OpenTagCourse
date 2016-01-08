@@ -32,6 +32,21 @@ void setup() {
   pinMode(ir_led_pin, OUTPUT);
   pinMode(ir_receiver_pin, INPUT);
   pinMode(piezo_pin, OUTPUT);
+  
+  //startup noise
+  int count = 0;
+      for (count = 1; count < 20; count++){
+        //start with the highest note. Since I'm using 20 notes,
+        //I want to have each note go lower in pitch by
+        //5000/20 = 250 (since my highest note is 5000)
+        //I want to multiply my count by 250. To do that, I use
+        //the * symbol, which stands for multiplication in the
+        //arduino programming language.
+        tone(piezo_pin, count*250);
+        delay(25);
+        noTone(piezo_pin);
+        delay(10);
+      }
 }
 
 void loop() {
@@ -53,9 +68,10 @@ void loop() {
       that sounds good to you. We are going to start with having
       the arduino make a high pitched sound when you send a tag
       */
-      tone(piezo_pin, 2500);           //make a high pitched sound
+      tone(piezo_pin, 5000);           //make a high pitched sound
       delay(25);                       //wait for 0.025 seconds
       noTone(piezo_pin);               //stop making sound
+      delay(25);                       //wait for a little bit
     }
     else{                              //if we don't have health
       /********
@@ -80,25 +96,28 @@ void loop() {
   if (ir_receiver_state == 0){
     //when we are tagged, we lose 1 health.
     health = health - 1;
+    
+    //turn on LED to also indicate that we were tagged
+    digitalWrite(led_pin, HIGH);    //turn LED on
+    
     /*****
     We also want to make a sound to indicate that we have 
     received a tag. Let's make it make three sounds this time.
     */
-    tone(piezo_pin, 1175);          //play first sound
-    delay(25);
+    tone(piezo_pin, 500);          //play first sound
+    delay(50);
     noTone(piezo_pin);
     delay(10);
-    tone(piezo_pin, 294);           //play second sound
-    delay(25);
+    tone(piezo_pin, 3500);           //play second sound
+    delay(50);
     noTone(piezo_pin);
     delay(10);
-    tone(piezo_pin, 4699);          //play third sound
-    delay(25);
+    tone(piezo_pin, 500);          //play third sound
+    delay(100);
     noTone(piezo_pin);              //stop playing sound 
+    delay(10);
     
-    //turn on LED to also indicate that we were tagged
-    digitalWrite(led_pin, HIGH);    //turn LED on
-    delay(1000);                    //delay for 1 second
+    
     digitalWrite(led_pin, LOW);     //then turn LED off
     
     /******

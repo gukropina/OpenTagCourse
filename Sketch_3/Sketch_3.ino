@@ -1,7 +1,8 @@
 //Sketch_3
 /* This program goes with Lab 3 of the OpenTag laser tag tutorial.
-It sends a pulsed IR signal (38,000 times a second) when a button
-is pressed and turns on an LED if a signal is seen
+It sends a pulsed Infrared (IR) signal (38,000 times a second) when a button
+is pressed 
+The arduino turns on an LED if a signal is seen
 */
 
 /*
